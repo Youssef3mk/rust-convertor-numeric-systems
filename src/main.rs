@@ -16,15 +16,6 @@ impl ENsys {
     fn value(self) -> u8 {
         self as u8
     }
-    fn to_enum(n: u8) -> Self {
-        match n {
-            2 => Some(Self::BIN).unwrap(),
-            16 => Some(Self::HEX).unwrap(),
-            10 => Some(Self::DEC).unwrap(),
-            8 => Some(Self::OCT).unwrap(),
-            _ => None.unwrap(),
-        }
-    }
 }
 fn to_dec(number: &String, sys: ENsys) -> u64 {
     let mut res: u64 = 0;
