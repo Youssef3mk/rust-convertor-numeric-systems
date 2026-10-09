@@ -8,7 +8,7 @@ A Rust tool and library designed to convert numbers between different numeric sy
 
 ## 💡 Features
 
-The local `libutil` library includes functions to convert numbers between various base systems:
+The local `conv` mod includes functions to convert numbers between various base systems:
 - `to_bin`: Convert to Binary
 - `to_oct`: Convert to Octal
 - `to_dec`: Convert to Decimal
@@ -18,16 +18,16 @@ The local `libutil` library includes functions to convert numbers between variou
 
 ## 🚀 Usage
 
-Each conversion function accepts a string reference (`&String`) containing the number to convert, and an enum (`libutil::ENsys`) specifying its current numeric system.
+Each conversion function accepts a string reference (`&String`) containing the number to convert, and an enum (`conv::ENsys`) specifying its current numeric system.
 
 ### Example
 
 ```rust
-use libutil;
+use conv::*;
 
 fn main() {
     // Convert a binary string to hexadecimal
-    let result = libutil::to_hex(&String::from("1110101110110100011"), libutil::ENsys::BIN);
+    let result = to_hex(&String::from("1110101110110100011"), ENsys::BIN);
 
     println!("Value is {}", result);
 }
